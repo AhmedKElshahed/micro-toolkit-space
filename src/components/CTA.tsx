@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -18,10 +19,12 @@ const CTA = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-          <Button size="lg" className="shadow-elegant group">
-            Get Started Now
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-          </Button>
+          <Link to="/tools/pdf-to-word">
+            <Button size="lg" className="shadow-elegant group">
+              Get Started Now
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            </Button>
+          </Link>
           <Button size="lg" variant="outline">
             Browse All Tools
           </Button>

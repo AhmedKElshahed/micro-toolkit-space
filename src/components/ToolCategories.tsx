@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Image, Calculator, Database, Lock, FileCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,9 +7,10 @@ const categories = [
   {
     icon: FileText,
     title: "Text Tools",
-    description: "Word counters, text converters, and formatters",
+    description: "PDF to Word, text converters, and formatters",
     count: "12 tools",
-    color: "text-blue-600 bg-blue-50 dark:bg-blue-950"
+    color: "text-blue-600 bg-blue-50 dark:bg-blue-950",
+    link: "/tools/pdf-to-word"
   },
   {
     icon: Image,
@@ -61,24 +63,35 @@ const ToolCategories = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {categories.map((category, index) => (
-            <Card 
-              key={index}
-              className="border-border shadow-card hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 group animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardHeader>
-                <div className={`h-14 w-14 rounded-xl ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <category.icon className="h-7 w-7" aria-hidden="true" />
-                </div>
-                <CardTitle className="text-xl">{category.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-muted-foreground">{category.description}</p>
-                <p className="text-sm font-medium text-primary">{category.count}</p>
-              </CardContent>
-            </Card>
-          ))}
+          {categories.map((category, index) => {
+            const cardContent = (
+              <Card 
+                className="border-border shadow-card hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 group animate-scale-in h-full cursor-pointer"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardHeader>
+                  <div className={`h-14 w-14 rounded-xl ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                    <category.icon className="h-7 w-7" aria-hidden="true" />
+                  </div>
+                  <CardTitle className="text-xl">{category.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-muted-foreground">{category.description}</p>
+                  <p className="text-sm font-medium text-primary">{category.count}</p>
+                </CardContent>
+              </Card>
+            );
+            
+            return category.link ? (
+              <Link key={index} to={category.link} className="block">
+                {cardContent}
+              </Link>
+            ) : (
+              <div key={index}>
+                {cardContent}
+              </div>
+            );
+          })}
         </div>
         
         <div className="text-center">
