@@ -44,7 +44,7 @@ const About = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
       
-      <main className="flex-1">
+      <main className="flex-1 pt-24">
         <article className="container mx-auto px-4 py-12 max-w-6xl">
           <div className="flex flex-col lg:flex-row gap-8 mb-12">
             <div className="flex-1">

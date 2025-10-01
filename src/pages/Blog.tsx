@@ -8,15 +8,11 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import blogPdfProductivity from "@/assets/blog-pdf-productivity.jpg";
-import blogFileFormats from "@/assets/blog-file-formats.jpg";
-import blogRemoteWork from "@/assets/blog-remote-work.jpg";
-import blogPrivacySecurity from "@/assets/blog-privacy-security.jpg";
-import blogUpdates from "@/assets/blog-updates.jpg";
-import blogKeyboardShortcuts from "@/assets/blog-keyboard-shortcuts.jpg";
+import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState<'all' | 'en' | 'es'>('all');
   
   useEffect(() => {
     document.title = "Blog - MicroTools | Tips, Guides & Updates";
@@ -29,74 +25,21 @@ const Blog = () => {
     }
   }, []);
 
-  const blogPosts = [
-    {
-      id: "pdf-productivity",
-      title: "10 Ways PDF to Word Conversion Can Boost Your Productivity",
-      excerpt: "Discover how converting PDFs to Word documents can streamline your workflow and save you hours of manual work.",
-      date: "March 15, 2024",
-      readTime: "5 min read",
-      category: "Productivity",
-      image: blogPdfProductivity
-    },
-    {
-      id: "file-formats",
-      title: "Understanding File Formats: A Complete Guide",
-      excerpt: "Learn about different file formats, when to use them, and how to convert between them efficiently.",
-      date: "March 10, 2024",
-      readTime: "8 min read",
-      category: "Guide",
-      image: blogFileFormats
-    },
-    {
-      id: "remote-work-tools",
-      title: "Top 5 Online Tools Every Remote Worker Needs",
-      excerpt: "Essential free online tools that can help you stay productive while working from anywhere.",
-      date: "March 5, 2024",
-      readTime: "6 min read",
-      category: "Remote Work",
-      image: blogRemoteWork
-    },
-    {
-      id: "privacy-security",
-      title: "How to Protect Your Privacy When Using Online Tools",
-      excerpt: "Best practices for maintaining your privacy and security when using web-based utilities.",
-      date: "February 28, 2024",
-      readTime: "7 min read",
-      category: "Security",
-      image: blogPrivacySecurity
-    },
-    {
-      id: "february-updates",
-      title: "MicroTools February Update: New Features & Improvements",
-      excerpt: "Check out the latest features we've added and improvements we've made based on your feedback.",
-      date: "February 20, 2024",
-      readTime: "4 min read",
-      category: "Updates",
-      image: blogUpdates
-    },
-    {
-      id: "keyboard-shortcuts",
-      title: "Keyboard Shortcuts to Speed Up Your Workflow",
-      excerpt: "Master these keyboard shortcuts to navigate our tools faster and boost your efficiency.",
-      date: "February 15, 2024",
-      readTime: "5 min read",
-      category: "Tips",
-      image: blogKeyboardShortcuts
-    }
-  ];
-
-  const filteredPosts = blogPosts.filter(post =>
-    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    post.category.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.category.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesLanguage = selectedLanguage === 'all' || post.language === selectedLanguage;
+    
+    return matchesSearch && matchesLanguage;
+  });
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
       
-      <main className="flex-1">
+      <main className="flex-1 pt-24">
         <article className="container mx-auto px-4 py-12 max-w-6xl">
           <div className="text-center mb-12 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -109,7 +52,7 @@ const Blog = () => {
 
           <div className="flex flex-col lg:flex-row gap-8 mb-12">
             <div className="flex-1">
-              <div className="mb-8">
+              <div className="mb-8 space-y-4">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" aria-hidden="true" />
                   <Input
@@ -120,6 +63,31 @@ const Blog = () => {
                     className="pl-10"
                     aria-label="Search blog posts"
                   />
+                </div>
+                
+                {/* Language Filter */}
+                <div className="flex gap-2">
+                  <Button
+                    variant={selectedLanguage === 'all' ? 'default' : 'outline'}
+                    onClick={() => setSelectedLanguage('all')}
+                    size="sm"
+                  >
+                    All Languages
+                  </Button>
+                  <Button
+                    variant={selectedLanguage === 'en' ? 'default' : 'outline'}
+                    onClick={() => setSelectedLanguage('en')}
+                    size="sm"
+                  >
+                    English
+                  </Button>
+                  <Button
+                    variant={selectedLanguage === 'es' ? 'default' : 'outline'}
+                    onClick={() => setSelectedLanguage('es')}
+                    size="sm"
+                  >
+                    Español
+                  </Button>
                 </div>
               </div>
 
