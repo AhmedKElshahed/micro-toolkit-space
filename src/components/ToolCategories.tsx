@@ -10,14 +10,15 @@ const categories = [
     description: "PDF to Word, text converters, and formatters",
     count: "12 tools",
     color: "text-blue-600 bg-blue-50 dark:bg-blue-950",
-    link: "/tools/pdf-to-word"
+    link: "/tools?category=text-tools"
   },
   {
     icon: Image,
     title: "Image Tools",
     description: "Resize, compress, convert, and edit images",
     count: "8 tools",
-    color: "text-purple-600 bg-purple-50 dark:bg-purple-950"
+    color: "text-purple-600 bg-purple-50 dark:bg-purple-950",
+    link: "/tools?category=image-tools"
   },
   {
     icon: Calculator,
@@ -95,8 +96,8 @@ const ToolCategories = () => {
         </div>
         
         <div className="text-center">
-          <Button size="lg" variant="outline" className="shadow-card">
-            View All Tools
+          <Button size="lg" variant="outline" className="shadow-card" asChild>
+            <Link to="/tools">View All Tools</Link>
           </Button>
         </div>
       </div>

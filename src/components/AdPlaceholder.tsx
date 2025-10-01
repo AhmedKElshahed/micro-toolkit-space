@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 
 interface AdPlaceholderProps {
-  size: "banner" | "rectangle" | "leaderboard";
+  size: "banner" | "rectangle" | "leaderboard" | "sidebar";
   className?: string;
 }
 
@@ -10,6 +10,7 @@ const AdPlaceholder = ({ size, className = "" }: AdPlaceholderProps) => {
     banner: { width: "300px", height: "250px", label: "Ad 300x250" },
     rectangle: { width: "336px", height: "280px", label: "Ad 336x280" },
     leaderboard: { width: "728px", height: "90px", label: "Ad 728x90" },
+    sidebar: { width: "300px", height: "600px", label: "Ad 300x600" },
   };
 
   const { width, height, label } = dimensions[size];
