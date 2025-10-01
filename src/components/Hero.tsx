@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import { Link } from "react-router-dom";
+import heroImage from "@/assets/hero-image-new.jpg";
 
 const Hero = () => {
   return (
@@ -27,13 +28,12 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="shadow-elegant group">
-                Explore Tools
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Learn More
-              </Button>
+              <Link to="/tools">
+                <Button size="lg" className="shadow-elegant group">
+                  Explore Tools
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </Button>
+              </Link>
             </div>
             
             <div className="flex items-center gap-8 pt-4">

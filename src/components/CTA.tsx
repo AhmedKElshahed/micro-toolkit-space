@@ -19,15 +19,17 @@ const CTA = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-          <Link to="/tools/pdf-to-word">
+          <Link to="/tools">
             <Button size="lg" className="shadow-elegant group">
               Get Started Now
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Button>
           </Link>
-          <Button size="lg" variant="outline">
-            Browse All Tools
-          </Button>
+          <Link to="/tools">
+            <Button size="lg" variant="outline">
+              Browse All Tools
+            </Button>
+          </Link>
         </div>
         
         <p className="text-sm text-muted-foreground pt-4">

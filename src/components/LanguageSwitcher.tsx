@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -20,12 +20,15 @@ const languages = [
 ];
 
 const LanguageSwitcher = () => {
-  const [currentLanguage, setCurrentLanguage] = useState(languages[0]);
+  const [currentLanguage, setCurrentLanguage] = useState(() => {
+    const saved = localStorage.getItem("selectedLanguage");
+    return saved ? JSON.parse(saved) : languages[0];
+  });
 
   const handleLanguageChange = (language: typeof languages[0]) => {
     setCurrentLanguage(language);
-    // In a real app, this would trigger actual language change
-    console.log("Language changed to:", language.code);
+    localStorage.setItem("selectedLanguage", JSON.stringify(language));
+    window.dispatchEvent(new CustomEvent("languageChange", { detail: language }));
   };
 
   return (
@@ -34,15 +37,15 @@ const LanguageSwitcher = () => {
         <Button 
           variant="ghost" 
           size="sm" 
-          className="gap-2"
+          className="gap-2 w-[120px] justify-start"
           aria-label="Select language"
         >
-          <Globe className="h-4 w-4" aria-hidden="true" />
-          <span className="hidden md:inline">{currentLanguage.flag} {currentLanguage.code.toUpperCase()}</span>
+          <Globe className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
+          <span className="hidden md:inline truncate">{currentLanguage.flag} {currentLanguage.code.toUpperCase()}</span>
           <span className="md:hidden">{currentLanguage.flag}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-48">
+      <DropdownMenuContent align="end" className="w-48 z-[60] bg-popover">
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}

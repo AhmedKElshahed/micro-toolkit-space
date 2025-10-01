@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Wrench } from "lucide-react";
+import { Link } from "react-router-dom";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
@@ -13,23 +14,25 @@ const Header = () => {
           </span>
         </a>
         
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-            Features
-          </a>
-          <a href="#tools" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+        <div className="hidden md:flex items-center gap-8 flex-shrink-0">
+          <Link to="/tools" className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap">
             Tools
-          </a>
-          <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-            About
-          </a>
+          </Link>
+          <Link to="/blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap">
+            Blog
+          </Link>
+          <Link to="/contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap">
+            Contact
+          </Link>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 flex-shrink-0">
           <LanguageSwitcher />
-          <Button variant="default" size="sm" className="shadow-elegant">
-            Get Started
-          </Button>
+          <Link to="/tools">
+            <Button variant="default" size="sm" className="shadow-elegant whitespace-nowrap">
+              Get Started
+            </Button>
+          </Link>
         </div>
       </nav>
     </header>

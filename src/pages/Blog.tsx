@@ -12,7 +12,10 @@ import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedLanguage, setSelectedLanguage] = useState<'all' | 'en' | 'es'>('all');
+  const [selectedLanguage, setSelectedLanguage] = useState<string>(() => {
+    const saved = localStorage.getItem("selectedLanguage");
+    return saved ? JSON.parse(saved).code : 'en';
+  });
   
   useEffect(() => {
     document.title = "Blog - MicroTools | Tips, Guides & Updates";
@@ -23,6 +26,13 @@ const Blog = () => {
         "Explore MicroTools blog for helpful tips, tool guides, productivity hacks, and the latest updates on our free online utilities."
       );
     }
+
+    const handleLanguageChange = (event: CustomEvent) => {
+      setSelectedLanguage(event.detail.code);
+    };
+
+    window.addEventListener("languageChange" as any, handleLanguageChange);
+    return () => window.removeEventListener("languageChange" as any, handleLanguageChange);
   }, []);
 
   const filteredPosts = blogPosts.filter(post => {
@@ -30,7 +40,7 @@ const Blog = () => {
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.category.toLowerCase().includes(searchQuery.toLowerCase());
     
-    const matchesLanguage = selectedLanguage === 'all' || post.language === selectedLanguage;
+    const matchesLanguage = post.language === selectedLanguage;
     
     return matchesSearch && matchesLanguage;
   });
@@ -51,8 +61,8 @@ const Blog = () => {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8 mb-12">
-            <div className="flex-1">
-              <div className="mb-8 space-y-4">
+          <div className="flex-1">
+              <div className="mb-8">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" aria-hidden="true" />
                   <Input
@@ -64,40 +74,15 @@ const Blog = () => {
                     aria-label="Search blog posts"
                   />
                 </div>
-                
-                {/* Language Filter */}
-                <div className="flex gap-2">
-                  <Button
-                    variant={selectedLanguage === 'all' ? 'default' : 'outline'}
-                    onClick={() => setSelectedLanguage('all')}
-                    size="sm"
-                  >
-                    All Languages
-                  </Button>
-                  <Button
-                    variant={selectedLanguage === 'en' ? 'default' : 'outline'}
-                    onClick={() => setSelectedLanguage('en')}
-                    size="sm"
-                  >
-                    English
-                  </Button>
-                  <Button
-                    variant={selectedLanguage === 'es' ? 'default' : 'outline'}
-                    onClick={() => setSelectedLanguage('es')}
-                    size="sm"
-                  >
-                    Español
-                  </Button>
-                </div>
               </div>
 
               <section aria-labelledby="blog-posts-heading">
                 <h2 id="blog-posts-heading" className="sr-only">Blog Posts</h2>
-                <div className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
                   {filteredPosts.map((post, index) => (
                     <Link key={index} to={`/blog/${post.id}`}>
                       <Card 
-                        className="border-border shadow-card hover:shadow-elegant transition-all duration-300 animate-scale-in group cursor-pointer"
+                        className="border-border shadow-card hover:shadow-elegant transition-all duration-300 animate-scale-in group cursor-pointer h-full flex flex-col"
                         style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         <div className="aspect-video w-full overflow-hidden rounded-t-lg">
@@ -109,12 +94,12 @@ const Blog = () => {
                         </div>
                         <CardHeader>
                           <Badge variant="secondary" className="w-fit mb-3">{post.category}</Badge>
-                          <CardTitle className="text-2xl group-hover:text-primary transition-colors">
+                          <CardTitle className="text-2xl group-hover:text-primary transition-colors line-clamp-2">
                             {post.title}
                           </CardTitle>
                         </CardHeader>
-                        <CardContent className="space-y-4">
-                          <p className="text-muted-foreground">{post.excerpt}</p>
+                        <CardContent className="space-y-4 flex-1 flex flex-col">
+                          <p className="text-muted-foreground line-clamp-3 flex-1">{post.excerpt}</p>
                           
                           <div className="flex items-center gap-4 text-sm text-muted-foreground">
                             <div className="flex items-center gap-1">
@@ -127,7 +112,7 @@ const Blog = () => {
                             </div>
                           </div>
                           
-                          <Button variant="ghost" className="group-hover:gap-2 transition-all p-0">
+                          <Button variant="ghost" className="group-hover:gap-2 transition-all p-0 w-fit">
                             Read More 
                             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                           </Button>

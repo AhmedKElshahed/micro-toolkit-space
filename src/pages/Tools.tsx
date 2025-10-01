@@ -61,8 +61,8 @@ const Tools = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
       
-      <main className="flex-1">
-        <article className="container mx-auto px-4 py-12 max-w-6xl">
+      <main className="flex-1 pt-24">
+        <article className="container mx-auto px-4 py-8 max-w-6xl">
           <div className="text-center mb-12 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               {categoryParam ? allTools.find(c => c.category === categoryParam)?.categoryName : "All Tools"}
