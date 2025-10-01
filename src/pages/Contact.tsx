@@ -78,31 +78,6 @@ const Contact = () => {
 
           <div className="flex flex-col lg:flex-row gap-8 mb-12">
             <div className="flex-1 space-y-8">
-              <section aria-labelledby="contact-methods-heading">
-                <h2 id="contact-methods-heading" className="sr-only">Contact Methods</h2>
-                <div className="grid gap-4 mb-8">
-                  {contactMethods.map((method, index) => (
-                    <Card 
-                      key={index}
-                      className="border-border shadow-card hover:shadow-elegant transition-all duration-300 animate-scale-in"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <CardContent className="pt-6">
-                        <div className="flex items-start gap-4">
-                          <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <method.icon className="h-6 w-6 text-primary" aria-hidden="true" />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold mb-1">{method.title}</h3>
-                            <p className="text-sm text-muted-foreground mb-2">{method.description}</p>
-                            <p className="text-sm font-medium text-primary">{method.contact}</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </section>
 
               <Card className="border-border shadow-card animate-fade-in">
                 <CardHeader>
