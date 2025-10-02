@@ -12,7 +12,7 @@ import { blogContent } from "@/data/blogContent";
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = blogPosts.find(p => p.id === slug);
+  const post = blogPosts.find(p => p.slug === slug);
   const content = slug ? blogContent[slug] : null;
 
   useEffect(() => {

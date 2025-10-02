@@ -1,0 +1,161 @@
+{
+  "common": {
+    "viewAllTools": "View All Tools",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "search": "Search",
+    "searchPlaceholder": "Search...",
+    "loading": "Loading...",
+    "error": "Error",
+    "notFound": "Not Found"
+  },
+  "header": {
+    "tools": "Tools",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "tagline": "Your go-to platform for free online tools",
+    "tools": "Tools",
+    "allTools": "All Tools",
+    "textTools": "Text Tools",
+    "imageTools": "Image Tools",
+    "calculators": "Calculators",
+    "dataTools": "Data Tools",
+    "company": "Company",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "accessibility": "Accessibility",
+    "copyright": "All rights reserved."
+  },
+  "hero": {
+    "title": "Free Online Tools for Everyone",
+    "subtitle": "Transform your workflow with our collection of powerful, easy-to-use online utilities. No signup required.",
+    "ctaPrimary": "Explore Tools",
+    "ctaSecondary": "Learn More"
+  },
+  "features": {
+    "title": "Why Choose MicroTools?",
+    "fast": {
+      "title": "Lightning Fast",
+      "description": "All tools are optimized for speed and performance"
+    },
+    "secure": {
+      "title": "100% Secure",
+      "description": "Your files are processed locally and never stored"
+    },
+    "free": {
+      "title": "Completely Free",
+      "description": "No hidden fees, subscriptions, or registration required"
+    },
+    "easy": {
+      "title": "Easy to Use",
+      "description": "Simple, intuitive interfaces designed for everyone"
+    }
+  },
+  "categories": {
+    "title": "Explore Tool Categories",
+    "subtitle": "Discover the perfect tool for your needs across multiple categories.",
+    "textTools": {
+      "title": "Text Tools",
+      "description": "PDF to Word, text converters, and formatters",
+      "count": "12 tools"
+    },
+    "imageTools": {
+      "title": "Image Tools",
+      "description": "Resize, compress, convert, and edit images",
+      "count": "8 tools"
+    },
+    "calculators": {
+      "title": "Calculators",
+      "description": "Financial, unit, and specialized calculators",
+      "count": "15 tools"
+    },
+    "dataTools": {
+      "title": "Data Tools",
+      "description": "JSON formatters, CSV converters, and validators",
+      "count": "10 tools"
+    },
+    "securityTools": {
+      "title": "Security Tools",
+      "description": "Hash generators, password tools, encryption",
+      "count": "6 tools"
+    },
+    "devTools": {
+      "title": "Developer Tools",
+      "description": "Code formatters, regex testers, minifiers",
+      "count": "9 tools"
+    }
+  },
+  "tools": {
+    "pdfToWord": {
+      "title": "PDF to Word Converter",
+      "description": "Convert PDF documents to editable Word files",
+      "metaDescription": "Free online PDF to Word converter. Transform your PDF documents into editable Word files instantly with our secure, fast conversion tool.",
+      "howToUse": "How to Use PDF to Word Converter",
+      "step1": "Click 'Choose PDF File' to select your document",
+      "step2": "Wait for the conversion to complete",
+      "step3": "Download your converted Word file",
+      "seoContent": {
+        "title": "Professional PDF to Word Conversion Made Easy",
+        "content": "Our PDF to Word converter is designed to provide accurate, fast, and secure document conversion. Whether you need to edit a contract, update a resume, or modify any PDF document, our tool preserves formatting, images, and text layout. All conversions happen in your browser for maximum privacy and security. No file size limits, no registration required, and completely free to use. Perfect for students, professionals, and businesses of all sizes."
+      }
+    },
+    "imageCompressor": {
+      "title": "Image Compressor",
+      "description": "Reduce image file sizes without losing quality",
+      "metaDescription": "Free online image compressor. Reduce JPG, PNG, and WEBP file sizes while maintaining quality. Fast, secure, and easy to use.",
+      "howToUse": "How to Compress Images",
+      "step1": "Upload your image file (JPG, PNG, WEBP)",
+      "step2": "Adjust compression quality if needed",
+      "step3": "Download your optimized image",
+      "seoContent": {
+        "title": "Smart Image Compression for Web & Mobile",
+        "content": "Optimize your images with our intelligent compression tool that reduces file sizes by up to 80% while maintaining visual quality. Perfect for websites, social media, and mobile apps. Our advanced algorithms ensure your images look great while loading faster. Support for JPG, PNG, and WEBP formats. All processing happens locally in your browser - your images never leave your device. Ideal for photographers, web developers, bloggers, and anyone who needs to optimize images quickly."
+      }
+    }
+  },
+  "blog": {
+    "title": "MicroTools Blog",
+    "subtitle": "Tips, guides, and updates to help you get the most out of our free online tools.",
+    "searchPlaceholder": "Search blog posts...",
+    "noResults": "No blog posts found matching your search.",
+    "readTime": "min read",
+    "sharePost": "Share this post",
+    "shareTwitter": "Share on Twitter",
+    "shareLinkedIn": "Share on LinkedIn",
+    "backToBlog": "Back to Blog",
+    "subscribe": {
+      "title": "Subscribe to Updates",
+      "description": "Get the latest posts and updates delivered directly to your inbox.",
+      "emailPlaceholder": "Your email address",
+      "button": "Subscribe"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question or suggestion? We'd love to hear from you.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us more...",
+      "submit": "Send Message"
+    }
+  },
+  "about": {
+    "title": "About MicroTools",
+    "subtitle": "Your trusted platform for free online utilities"
+  }
+}

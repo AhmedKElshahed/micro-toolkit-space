@@ -1,0 +1,161 @@
+{
+  "common": {
+    "viewAllTools": "Ver Todas las Herramientas",
+    "readMore": "Leer Más",
+    "learnMore": "Saber Más",
+    "getStarted": "Comenzar",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar...",
+    "loading": "Cargando...",
+    "error": "Error",
+    "notFound": "No Encontrado"
+  },
+  "header": {
+    "tools": "Herramientas",
+    "blog": "Blog",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "tagline": "Tu plataforma de herramientas online gratuitas",
+    "tools": "Herramientas",
+    "allTools": "Todas las Herramientas",
+    "textTools": "Herramientas de Texto",
+    "imageTools": "Herramientas de Imagen",
+    "calculators": "Calculadoras",
+    "dataTools": "Herramientas de Datos",
+    "company": "Empresa",
+    "about": "Acerca de Nosotros",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "cookies": "Política de Cookies",
+    "accessibility": "Accesibilidad",
+    "copyright": "Todos los derechos reservados."
+  },
+  "hero": {
+    "title": "Herramientas Online Gratuitas para Todos",
+    "subtitle": "Transforma tu flujo de trabajo con nuestra colección de utilidades online potentes y fáciles de usar. No requiere registro.",
+    "ctaPrimary": "Explorar Herramientas",
+    "ctaSecondary": "Saber Más"
+  },
+  "features": {
+    "title": "¿Por Qué Elegir MicroTools?",
+    "fast": {
+      "title": "Súper Rápido",
+      "description": "Todas las herramientas están optimizadas para velocidad y rendimiento"
+    },
+    "secure": {
+      "title": "100% Seguro",
+      "description": "Tus archivos se procesan localmente y nunca se almacenan"
+    },
+    "free": {
+      "title": "Completamente Gratis",
+      "description": "Sin tarifas ocultas, suscripciones o registro requerido"
+    },
+    "easy": {
+      "title": "Fácil de Usar",
+      "description": "Interfaces simples e intuitivas diseñadas para todos"
+    }
+  },
+  "categories": {
+    "title": "Explorar Categorías de Herramientas",
+    "subtitle": "Descubre la herramienta perfecta para tus necesidades en múltiples categorías.",
+    "textTools": {
+      "title": "Herramientas de Texto",
+      "description": "PDF a Word, convertidores de texto y formateadores",
+      "count": "12 herramientas"
+    },
+    "imageTools": {
+      "title": "Herramientas de Imagen",
+      "description": "Redimensionar, comprimir, convertir y editar imágenes",
+      "count": "8 herramientas"
+    },
+    "calculators": {
+      "title": "Calculadoras",
+      "description": "Calculadoras financieras, de unidades y especializadas",
+      "count": "15 herramientas"
+    },
+    "dataTools": {
+      "title": "Herramientas de Datos",
+      "description": "Formateadores JSON, convertidores CSV y validadores",
+      "count": "10 herramientas"
+    },
+    "securityTools": {
+      "title": "Herramientas de Seguridad",
+      "description": "Generadores de hash, herramientas de contraseñas, cifrado",
+      "count": "6 herramientas"
+    },
+    "devTools": {
+      "title": "Herramientas para Desarrolladores",
+      "description": "Formateadores de código, probadores regex, minificadores",
+      "count": "9 herramientas"
+    }
+  },
+  "tools": {
+    "pdfToWord": {
+      "title": "Convertidor de PDF a Word",
+      "description": "Convierte documentos PDF en archivos Word editables",
+      "metaDescription": "Convertidor gratuito de PDF a Word online. Transforma tus documentos PDF en archivos Word editables al instante con nuestra herramienta de conversión segura y rápida.",
+      "howToUse": "Cómo Usar el Convertidor de PDF a Word",
+      "step1": "Haz clic en 'Elegir Archivo PDF' para seleccionar tu documento",
+      "step2": "Espera a que se complete la conversión",
+      "step3": "Descarga tu archivo Word convertido",
+      "seoContent": {
+        "title": "Conversión Profesional de PDF a Word Hecha Fácil",
+        "content": "Nuestro convertidor de PDF a Word está diseñado para proporcionar una conversión de documentos precisa, rápida y segura. Ya sea que necesites editar un contrato, actualizar un currículum o modificar cualquier documento PDF, nuestra herramienta preserva el formato, las imágenes y el diseño del texto. Todas las conversiones ocurren en tu navegador para máxima privacidad y seguridad. Sin límites de tamaño de archivo, sin registro requerido y completamente gratis. Perfecto para estudiantes, profesionales y empresas de todos los tamaños."
+      }
+    },
+    "imageCompressor": {
+      "title": "Compresor de Imágenes",
+      "description": "Reduce el tamaño de archivos de imagen sin perder calidad",
+      "metaDescription": "Compresor de imágenes online gratuito. Reduce el tamaño de archivos JPG, PNG y WEBP manteniendo la calidad. Rápido, seguro y fácil de usar.",
+      "howToUse": "Cómo Comprimir Imágenes",
+      "step1": "Sube tu archivo de imagen (JPG, PNG, WEBP)",
+      "step2": "Ajusta la calidad de compresión si es necesario",
+      "step3": "Descarga tu imagen optimizada",
+      "seoContent": {
+        "title": "Compresión Inteligente de Imágenes para Web y Móvil",
+        "content": "Optimiza tus imágenes con nuestra herramienta de compresión inteligente que reduce el tamaño de los archivos hasta en un 80% manteniendo la calidad visual. Perfecta para sitios web, redes sociales y aplicaciones móviles. Nuestros algoritmos avanzados aseguran que tus imágenes se vean geniales mientras se cargan más rápido. Soporte para formatos JPG, PNG y WEBP. Todo el procesamiento ocurre localmente en tu navegador - tus imágenes nunca salen de tu dispositivo. Ideal para fotógrafos, desarrolladores web, bloggers y cualquiera que necesite optimizar imágenes rápidamente."
+      }
+    }
+  },
+  "blog": {
+    "title": "Blog de MicroTools",
+    "subtitle": "Consejos, guías y actualizaciones para ayudarte a aprovechar al máximo nuestras herramientas online gratuitas.",
+    "searchPlaceholder": "Buscar publicaciones del blog...",
+    "noResults": "No se encontraron publicaciones que coincidan con tu búsqueda.",
+    "readTime": "min de lectura",
+    "sharePost": "Compartir esta publicación",
+    "shareTwitter": "Compartir en Twitter",
+    "shareLinkedIn": "Compartir en LinkedIn",
+    "backToBlog": "Volver al Blog",
+    "subscribe": {
+      "title": "Suscribirse a Actualizaciones",
+      "description": "Recibe las últimas publicaciones y actualizaciones directamente en tu bandeja de entrada.",
+      "emailPlaceholder": "Tu dirección de correo",
+      "button": "Suscribirse"
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "¿Tienes una pregunta o sugerencia? Nos encantaría saber de ti.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "tu@correo.com",
+      "subject": "Asunto",
+      "subjectPlaceholder": "¿Cómo podemos ayudarte?",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos más...",
+      "submit": "Enviar Mensaje"
+    }
+  },
+  "about": {
+    "title": "Acerca de MicroTools",
+    "subtitle": "Tu plataforma de confianza para utilidades online gratuitas"
+  }
+}

@@ -1,90 +1,104 @@
-import blogPdfProductivity from "@/assets/blog-pdf-productivity.jpg";
-import blogFileFormats from "@/assets/blog-file-formats.jpg";
-import blogRemoteWork from "@/assets/blog-remote-work.jpg";
-import blogPrivacySecurity from "@/assets/blog-privacy-security.jpg";
-import blogUpdates from "@/assets/blog-updates.jpg";
-import blogKeyboardShortcuts from "@/assets/blog-keyboard-shortcuts.jpg";
+import blogPdfProductivityImage from "@/assets/blog-pdf-productivity.jpg";
+import blogFileFormatsImage from "@/assets/blog-file-formats.jpg";
+import blogRemoteWorkImage from "@/assets/blog-remote-work.jpg";
+import blogPrivacySecurityImage from "@/assets/blog-privacy-security.jpg";
+import blogUpdatesImage from "@/assets/blog-updates.jpg";
+import blogKeyboardShortcutsImage from "@/assets/blog-keyboard-shortcuts.jpg";
 
 export interface BlogPost {
-  id: string;
+  canonicalId: string;
+  language: string;
+  slug: string;
   title: string;
   excerpt: string;
   date: string;
   readTime: string;
   category: string;
+  tags: string[];
   image: string;
-  language: 'en' | 'es';
+  imageAlt: string;
 }
 
 export const blogPosts: BlogPost[] = [
+  // English posts
   {
-    id: "pdf-productivity",
-    title: "10 Ways PDF to Word Conversion Can Boost Your Productivity",
-    excerpt: "Discover how converting PDFs to Word documents can streamline your workflow and save you hours of manual work.",
-    date: "March 15, 2024",
+    canonicalId: "pdf-productivity-tips",
+    language: "en",
+    slug: "best-free-pdf-to-word-tools",
+    title: "10 Best Free PDF to Word Converters in 2024",
+    excerpt: "Discover the top free tools for converting PDF documents to editable Word files with our comprehensive guide.",
+    date: "2024-03-15",
     readTime: "5 min read",
     category: "Productivity",
-    image: blogPdfProductivity,
-    language: 'en'
+    tags: ["PDF", "Word", "Conversion", "Tools"],
+    image: blogPdfProductivityImage,
+    imageAlt: "PDF to Word conversion tools comparison"
   },
   {
-    id: "pdf-productivity-es",
-    title: "10 Formas en que la Conversión de PDF a Word Puede Aumentar Tu Productividad",
-    excerpt: "Descubre cómo convertir PDFs a documentos Word puede optimizar tu flujo de trabajo y ahorrarte horas de trabajo manual.",
-    date: "15 de Marzo, 2024",
-    readTime: "5 min de lectura",
-    category: "Productividad",
-    image: blogPdfProductivity,
-    language: 'es'
+    canonicalId: "image-compression-guide",
+    language: "en",
+    slug: "ultimate-image-compression-guide",
+    title: "The Ultimate Guide to Image Compression",
+    excerpt: "Learn how to optimize your images for web and mobile without sacrificing quality.",
+    date: "2024-03-10",
+    readTime: "7 min read",
+    category: "Guides",
+    tags: ["Images", "Optimization", "Web Performance"],
+    image: blogFileFormatsImage,
+    imageAlt: "Image compression optimization techniques"
   },
   {
-    id: "file-formats",
-    title: "Understanding File Formats: A Complete Guide",
-    excerpt: "Learn about different file formats, when to use them, and how to convert between them efficiently.",
-    date: "March 10, 2024",
-    readTime: "8 min read",
-    category: "Guide",
-    image: blogFileFormats,
-    language: 'en'
-  },
-  {
-    id: "remote-work-tools",
-    title: "Top 5 Online Tools Every Remote Worker Needs",
-    excerpt: "Essential free online tools that can help you stay productive while working from anywhere.",
-    date: "March 5, 2024",
+    canonicalId: "remote-work-tools",
+    language: "en",
+    slug: "essential-tools-remote-work",
+    title: "10 Essential Tools for Remote Work Success",
+    excerpt: "Boost your productivity with these must-have online tools for remote teams.",
+    date: "2024-03-05",
     readTime: "6 min read",
     category: "Remote Work",
-    image: blogRemoteWork,
-    language: 'en'
+    tags: ["Remote Work", "Productivity", "Collaboration"],
+    image: blogRemoteWorkImage,
+    imageAlt: "Remote work productivity tools"
+  },
+
+  // Spanish posts
+  {
+    canonicalId: "pdf-productivity-tips",
+    language: "es",
+    slug: "los-mejores-conversores-pdf-a-word-gratis",
+    title: "Los 10 Mejores Convertidores Gratuitos de PDF a Word en 2024",
+    excerpt: "Descubre las mejores herramientas gratuitas para convertir documentos PDF a archivos Word editables con nuestra guía completa.",
+    date: "2024-03-15",
+    readTime: "5 min de lectura",
+    category: "Productividad",
+    tags: ["PDF", "Word", "Conversión", "Herramientas"],
+    image: blogPdfProductivityImage,
+    imageAlt: "Comparación de herramientas de conversión de PDF a Word"
   },
   {
-    id: "privacy-security",
-    title: "How to Protect Your Privacy When Using Online Tools",
-    excerpt: "Best practices for maintaining your privacy and security when using web-based utilities.",
-    date: "February 28, 2024",
-    readTime: "7 min read",
-    category: "Security",
-    image: blogPrivacySecurity,
-    language: 'en'
+    canonicalId: "image-compression-guide",
+    language: "es",
+    slug: "guia-definitiva-compresion-imagenes",
+    title: "La Guía Definitiva para Comprimir Imágenes",
+    excerpt: "Aprende cómo optimizar tus imágenes para web y móvil sin sacrificar calidad.",
+    date: "2024-03-10",
+    readTime: "7 min de lectura",
+    category: "Guías",
+    tags: ["Imágenes", "Optimización", "Rendimiento Web"],
+    image: blogFileFormatsImage,
+    imageAlt: "Técnicas de optimización de compresión de imágenes"
   },
   {
-    id: "february-updates",
-    title: "MicroTools February Update: New Features & Improvements",
-    excerpt: "Check out the latest features we've added and improvements we've made based on your feedback.",
-    date: "February 20, 2024",
-    readTime: "4 min read",
-    category: "Updates",
-    image: blogUpdates,
-    language: 'en'
+    canonicalId: "remote-work-tools",
+    language: "es",
+    slug: "herramientas-esenciales-trabajo-remoto",
+    title: "10 Herramientas Esenciales para el Éxito del Trabajo Remoto",
+    excerpt: "Aumenta tu productividad con estas herramientas online imprescindibles para equipos remotos.",
+    date: "2024-03-05",
+    readTime: "6 min de lectura",
+    category: "Trabajo Remoto",
+    tags: ["Trabajo Remoto", "Productividad", "Colaboración"],
+    image: blogRemoteWorkImage,
+    imageAlt: "Herramientas de productividad para trabajo remoto"
   },
-  {
-    id: "keyboard-shortcuts",
-    title: "Keyboard Shortcuts to Speed Up Your Workflow",
-    excerpt: "Master these keyboard shortcuts to navigate our tools faster and boost your efficiency.",
-    date: "February 15, 2024",
-    readTime: "5 min read",
-    category: "Tips",
-    image: blogKeyboardShortcuts,
-    language: 'en'
-  }
 ];

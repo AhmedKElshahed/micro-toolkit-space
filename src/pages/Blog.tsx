@@ -80,7 +80,7 @@ const Blog = () => {
                 <h2 id="blog-posts-heading" className="sr-only">Blog Posts</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   {filteredPosts.map((post, index) => (
-                    <Link key={index} to={`/blog/${post.id}`}>
+                    <Link key={index} to={`/blog/${post.slug}`}>
                       <Card 
                         className="border-border shadow-card hover:shadow-elegant transition-all duration-300 animate-scale-in group cursor-pointer h-full flex flex-col"
                         style={{ animationDelay: `${index * 0.1}s` }}
